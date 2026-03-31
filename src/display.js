@@ -46,7 +46,7 @@ function printBanner(text) { console.log(chalk.cyan(text)); }
 
 function printOnlineBox(cfg, agentCount) {
   const lines = [
-    chalk.cyan('Signum Agent Online'),
+    chalk.cyan('Agentic Wallet Online'),
     '',
     `  Agent ID:  ${cfg.agentId}`,
     `  Network:   ${state.wallet.networkName || cfg.network}`,
@@ -122,7 +122,7 @@ function printDashboard(agents) {
   const totalPct = ((totalSpent / totalAllocated) * 100).toFixed(1);
   table.push([chalk.cyan('TOTAL'), '', `avg: ${avgKya}`, `${fmtInt(totalAllocated)} USD`, `${totalPct}%`, `${alertCount} alert${alertCount !== 1 ? 's' : ''}`]);
 
-  const header = '\n' + chalk.cyan('─'.repeat(54)) + ' Signum Treasury Dashboard ' + chalk.cyan('─'.repeat(10));
+  const header = '\n' + chalk.cyan('─'.repeat(54)) + ' Agentic Wallet Dashboard ' + chalk.cyan('─'.repeat(10));
   _log(header + '\n' + table.toString());
 }
 

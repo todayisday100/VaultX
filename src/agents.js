@@ -1,6 +1,6 @@
 'use strict';
 
-// Registry of simulated AI agents managed by Signum treasury
+// Registry of simulated AI agents managed by Agentic Wallet treasury
 const agents = [
   {
     id:              'arx-7',

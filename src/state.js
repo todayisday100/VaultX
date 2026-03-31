@@ -4,7 +4,7 @@ const os   = require('os');
 const path = require('path');
 const fs   = require('fs');
 
-const CONFIG_DIR  = path.join(os.homedir(), '.signum');
+const CONFIG_DIR  = path.join(os.homedir(), '.agentic-wallet');
 const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 
 const state = {

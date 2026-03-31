@@ -1,5 +1,5 @@
 {
-  "name": "signum-agent",
+  "name": "agentic-wallet",
   "version": "0.1.0-alpha",
   "description": "Agentic wallet infrastructure for AI systems over x402",
   "main": "src/index.js",
@@ -7,7 +7,7 @@
     "start": "node src/index.js"
   },
   "keywords": ["x402", "ai-agent", "agentic-wallet", "treasury", "budget", "protocol"],
-  "author": "Signum",
+  "author": "Agentic Wallet",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",

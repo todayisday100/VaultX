@@ -46,7 +46,7 @@ async function animateStep(label, ms) {
 // ─── Main onboarding flow ─────────────────────────────────────────────────────
 
 async function run(rl, agents) {
-  console.log('\n' + chalk.cyan('Signum Agent — First Run Setup'));
+  console.log('\n' + chalk.cyan('Agentic Wallet — First Run Setup'));
   console.log(chalk.gray('─'.repeat(52)) + '\n');
 
   // ── 1. Wallet ──────────────────────────────────────────────────────────────
@@ -66,7 +66,7 @@ async function run(rl, agents) {
     address = wallet.generateAddress();
     console.log(`\n${chalk.cyan('✓')} Wallet generated`);
     console.log(`  Address:  ${chalk.white(address)}`);
-    console.log(chalk.gray('  Key saved to: ~/.signum/wallet.enc') + '\n');
+    console.log(chalk.gray('  Key saved to: ~/.agentic-wallet/wallet.enc') + '\n');
 
   } else if (choice === '2') {
     await ask(rl, 'Enter private key: ');
@@ -188,7 +188,7 @@ async function run(rl, agents) {
   state.save(cfg);
   _applyConfig(cfg);
 
-  console.log(`${chalk.cyan('✓')} Config saved to ${chalk.gray('~/.signum/config.json')}\n`);
+  console.log(`${chalk.cyan('✓')} Config saved to ${chalk.gray('~/.agentic-wallet/config.json')}\n`);
   console.log(chalk.gray('─'.repeat(52)));
   console.log(`\n${chalk.cyan('✓')} All set. Starting monitor...\n`);
   await sleep(500);

@@ -1,46 +1,106 @@
-# Signum
+<div align="center">
 
-Agentic wallet infrastructure for AI systems over x402.
+# Agentic Wallet
 
-## What is this
+**Treasury and budget infrastructure for autonomous AI agents over x402**
 
-Signum is a CLI agent that implements a treasury and budget management layer for autonomous AI agents communicating over the x402 payment protocol. Each AI agent in the registry has an allocated budget, a KYA (Know Your Agent) trust score, and issues x402-signed requests to protocol endpoints. Signum monitors all activity in real time — tracking spend, scoring agent behavior, and surfacing anomalies before they become incidents.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0--alpha-green.svg)]()
+[![CI](https://github.com/todayisday100/agentic-wallet/actions/workflows/ci.yml/badge.svg)](https://github.com/todayisday100/agentic-wallet/actions)
+[![x402](https://img.shields.io/badge/protocol-x402-00ffa3.svg)]()
 
-This is a demonstration concept. All data is simulated — no real blockchain, no real payments.
+</div>
+
+---
+
+## Overview
+
+Agentic Wallet is a treasury and budget management layer for autonomous AI agents operating over the [x402 payment protocol](https://x402.org). Each agent in the registry receives an allocated budget, a KYA (Know Your Agent) behavioral trust score, and signs x402 requests to protocol endpoints in real time.
+
+The system monitors all activity continuously — tracking spend per agent, detecting score drift, and surfacing anomalies before they become incidents.
+
+> Demonstration concept. All data is simulated — no real blockchain, no real payments.
+
+---
+
+## Features
+
+| | Feature | Description |
+|---|---|---|
+| ◆ | **Treasury engine** | Per-agent budget allocation with hard caps and real-time alerts |
+| ◆ | **KYA scoring** | Behavioral trust scoring with drift detection and floor enforcement |
+| ◆ | **x402 signing** | Request signing and routing over the x402 HTTP payment protocol |
+| ◆ | **Interactive CLI** | Live `aw>` prompt — pause, topup, freeze, withdraw in real time |
+| ◆ | **Anomaly detection** | Budget critical, KYA floor breach, and treasury-wide freeze events |
+| ◆ | **Policy engine** | Per-agent tx limits, global thresholds, configurable KYA minimums |
+
+---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/todayisday100/Signum.git
-cd Signum
+git clone https://github.com/todayisday100/agentic-wallet.git
+cd agentic-wallet
 npm install
-cp .env.example .env
 npm start
 ```
 
-Works without a `.env` file — all values have sensible defaults.
+No `.env` required — all values have sensible defaults.
+
+---
+
+## CLI Reference
+
+```
+aw> status                  Treasury overview
+aw> agents                  All agents table
+aw> agent <id>              Agent detail + recent txs
+aw> txlog [id]              Last 20 transactions
+aw> pause <id>              Pause agent spending
+aw> resume <id>             Resume paused agent
+aw> topup <id> <usd>        Add budget to agent
+aw> limit <id> <usd>        Set max single tx for agent
+aw> freeze                  Halt ALL agent spending
+aw> unfreeze                Resume all agents
+aw> withdraw <usd>          Withdraw from treasury
+aw> set threshold <pct>     Low-budget alert threshold
+aw> set kya-min <n>         KYA minimum score
+aw> help                    Show this list
+aw> exit                    Shutdown
+```
+
+---
 
 ## Configuration
 
-See [`.env.example`](.env.example) for the full list. Key variables:
+All values are optional. Set via environment variables or `.env` file.
 
 | Variable | Default | Description |
 |---|---|---|
-| `SIGNUM_AGENT_ID` | `signum-primary-001` | Identity of this agent instance |
-| `SIGNUM_NETWORK` | `testnet` | Target network |
-| `SIGNUM_TOTAL_BUDGET` | `10000` | Total treasury budget in USD |
-| `SIGNUM_ALERT_THRESHOLD` | `0.2` | Budget remaining fraction to trigger alert |
-| `SIGNUM_KYA_MIN_SCORE` | `0.6` | Minimum acceptable KYA trust score |
-| `SIGNUM_TICK_INTERVAL_MS` | `2000` | Milliseconds between simulation ticks |
+| `AW_AGENT_ID` | `aw-primary-001` | Identity of this wallet instance |
+| `AW_NETWORK` | `testnet` | Target network |
+| `AW_TOTAL_BUDGET` | `10000` | Total treasury budget in USD |
+| `AW_ALERT_THRESHOLD` | `0.2` | Budget remaining fraction to trigger alert |
+| `AW_KYA_MIN_SCORE` | `0.6` | Minimum acceptable KYA trust score |
+| `AW_MAX_SINGLE_TX` | `500` | Max spend per single transaction in USD |
+| `AW_TICK_INTERVAL_MS` | `2000` | Milliseconds between simulation ticks |
 
-## What it shows
+---
 
-- Boot sequence with step-by-step initialization
-- Real-time x402 request log (agent, method, path, cost, status, latency)
-- Budget tracking per agent with low-budget alerts
-- KYA score drift monitoring with threshold alerts
-- Treasury dashboard table every 10 ticks
+## Roadmap
+
+- [x] Core treasury engine
+- [x] KYA behavioral scoring
+- [x] x402 request signing and routing
+- [x] Interactive CLI with full command set
+- [x] Real-time anomaly detection
+- [ ] TEE key storage (Q2 2026)
+- [ ] Policy Engine v2 — multi-sig approval flows (Q2 2026)
+- [ ] Session keys with TTL (Q3 2026)
+- [ ] Onchain deployment (Q3 2026)
+
+---
 
 ## License
 
-MIT — Signum
+MIT © 2026 Agentic Wallet

@@ -264,7 +264,7 @@ function start(agents) {
   const rl = state.rl;
   if (!rl) return;
 
-  rl.setPrompt(chalk.cyan('signum') + '> ');
+  rl.setPrompt(chalk.cyan('aw') + '> ');
   rl.prompt();
 
   rl.on('line', async (line) => {
@@ -298,7 +298,7 @@ function start(agents) {
       case 'set':      cmdSet(parts[1], parts[2]); break;
       case 'exit':
       case 'quit':
-        console.log('\nSignum Agent shutting down... Goodbye.');
+        console.log('\nAgentic Wallet shutting down... Goodbye.');
         process.exit(0);
         break;
       default:
@@ -309,7 +309,7 @@ function start(agents) {
   });
 
   rl.on('close', () => {
-    console.log('\nSignum Agent shutting down... Goodbye.');
+    console.log('\nAgentic Wallet shutting down... Goodbye.');
     process.exit(0);
   });
 }

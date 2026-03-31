@@ -39,7 +39,7 @@ async function main() {
   process.on('SIGINT', () => {
     loop.stop();
     rl.close();
-    process.stdout.write('\nSignum Agent shutting down... Goodbye.\n');
+    process.stdout.write('\nAgentic Wallet shutting down... Goodbye.\n');
     process.exit(0);
   });
 

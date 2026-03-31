@@ -27,7 +27,7 @@ async function animateStep(label, ms) {
 
 async function boot(agents) {
   // ASCII banner
-  const banner = figlet.textSync('Signum', { font: 'Standard' });
+  const banner = figlet.textSync('AgenticWallet', { font: 'Standard' });
   console.log(chalk.cyan(banner));
   console.log();
 
